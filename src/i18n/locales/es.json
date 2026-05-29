@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, mi nombre es",
+    "role": "Desarrollador de Software",
+    "bio1": "Especializado en Java, Spring Boot y Android.",
+    "bio2": "Apasionado por el aprendizaje",
+    "cta_projects": "Ver proyectos",
+    "cta_contact": "Contacto"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "About Me",
+    "p1": "Soy un desarrollador de software con experiencia en el desarrollo de aplicaciones de escritorio, APIs REST y aplicaciones móviles Android.",
+    "p2": "He trabajado con equipos en proyectos reales, desde el diseño de bases de datos hasta el despliegue en la nube con Azure. Me apasiona escribir código limpio y construir soluciones que resuelvan problemas reales."
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Skills"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Projects",
+    "github": "Ver en GitHub",
+    "jfocus_desc": "Aplicación de escritorio para administración de tareas desarrollada con JavaFX.",
+    "nanosip_desc": "Sistema de gestión empresarial con control de acceso por permisos. Maneja empleados, clientes, ventas, inventario y proveedores. API REST con Spring Boot y base de datos desplegada en Azure.",
+    "nanosip_api_desc": "API REST con Spring Boot para el proyecto de Nanosip.",
+    "atmos_desc": "Aplicación móvil Android que consume una API del clima para mostrar el estado del tiempo en tiempo real."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Contact",
+    "description": "¿Tienes un proyecto en mente o quieres trabajar juntos? Escríbeme."
+  }
+}

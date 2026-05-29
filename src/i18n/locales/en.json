@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, my name is",
+    "role": "Software Developer",
+    "bio1": "Specialized in Java, Spring Boot and Android.",
+    "bio2": "Passionate about learning",
+    "cta_projects": "View projects",
+    "cta_contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Sobre mí",
+    "p1": "I am a software developer with experience building desktop applications, REST APIs and Android mobile apps.",
+    "p2": "I have worked with teams on real projects, from database design to cloud deployment with Azure. I am passionate about writing clean code and building solutions that solve real problems."
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Habilidades"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Proyectos",
+    "github": "View on GitHub",
+    "jfocus_desc": "Desktop task management application built with JavaFX.",
+    "nanosip_desc": "Enterprise management system with role-based access control. Handles employees, clients, sales, inventory and suppliers. REST API with Spring Boot and database deployed on Azure.",
+    "nanosip_api_desc": "REST API built with Spring Boot for the Nanosip project.",
+    "atmos_desc": "Android mobile app that consumes a weather API to display real-time weather conditions."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Contacto",
+    "description": "Have a project in mind or want to work together? Write to me."
+  }
+}
