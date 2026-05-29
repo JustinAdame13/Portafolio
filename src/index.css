@@ -1,2 +1,106 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Geist:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --surface: #0b1326;
+  --surface-container: #171f33;
+  --surface-container-low: #131b2e;
+  --surface-container-high: #222a3d;
+  --surface-container-highest: #2d3449;
+  --surface-deep: #020617;
+  --on-surface: #dae2fd;
+  --on-surface-variant: #cfc2d6;
+  --outline: #988d9f;
+  --outline-variant: #4d4354;
+  --primary: #ddb7ff;
+  --primary-container: #b76dff;
+  --on-primary-container: #400071;
+  --secondary: #4edea3;
+  --tertiary: #fabc4e;
+  --electric-purple: #C084FC;
+  --emerald-glow: #34D399;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: 'Geist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Efecto de cristal para la navbar */
+.glass-panel {
+  background: rgba(19, 27, 46, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(192, 132, 252, 0.15);
+}
+
+/* Tarjetas con efecto de cristal */
+.glass-card {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(77, 67, 84, 0.35);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--electric-purple);
+  background: rgba(23, 31, 51, 0.85);
+  box-shadow: 0 0 24px rgba(192, 132, 252, 0.12);
+}
+
+/* Texto con gradiente púrpura → verde */
+.text-gradient {
+  background: linear-gradient(to right, #ddb7ff, #4edea3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Barra de habilidades - fondo */
+.skill-bar-bg {
+  background: rgba(77, 67, 84, 0.4);
+  height: 4px;
+  width: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* Barra de habilidades - relleno */
+.skill-bar-fill {
+  background: linear-gradient(90deg, #C084FC, #4edea3);
+  height: 100%;
+  border-radius: 9999px;
+}
+
+/* Fuente monoespaciada para etiquetas técnicas */
+.font-mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Resplandor del héroe que sigue al mouse */
+.hero-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.08) 0%, rgba(11, 19, 38, 0) 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.1s ease, top 0.1s ease;
+  z-index: 0;
+}

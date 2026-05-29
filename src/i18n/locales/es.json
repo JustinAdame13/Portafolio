@@ -8,24 +8,34 @@
   "hero": {
     "greeting": "Hola, mi nombre es",
     "role": "Desarrollador de Software",
+    "badge": "Enfocado en Soluciones Desktop y Móvil",
     "bio1": "Especializado en Java, Spring Boot y Android.",
-    "bio2": "Apasionado por el aprendizaje",
-    "cta_projects": "Ver proyectos",
+    "bio2": "Apasionado por el aprendizaje y construir soluciones reales.",
+    "cta_projects": "Ver Proyectos",
     "cta_contact": "Contacto"
   },
   "about": {
-    "title": "Sobre mí",
-    "subtitle": "About Me",
+    "title": "Pasión por la Tecnología",
+    "subtitle": "Sobre Mí",
     "p1": "Soy un desarrollador de software con experiencia en el desarrollo de aplicaciones de escritorio, APIs REST y aplicaciones móviles Android.",
-    "p2": "He trabajado con equipos en proyectos reales, desde el diseño de bases de datos hasta el despliegue en la nube con Azure. Me apasiona escribir código limpio y construir soluciones que resuelvan problemas reales."
+    "p2": "He trabajado con equipos en proyectos reales, desde el diseño de bases de datos hasta el despliegue en la nube con Azure. Me apasiona escribir código limpio y construir soluciones que resuelvan problemas reales.",
+    "years": "Años de Exp.",
+    "projects": "Proyectos"
   },
   "skills": {
-    "title": "Habilidades",
-    "subtitle": "Skills"
+    "title": "Dominio Técnico",
+    "subtitle": "Stack Tecnológico",
+    "description": "Experiencia sólida construyendo aplicaciones de escritorio, móviles y web de extremo a extremo.",
+    "cat_languages": "Lenguajes",
+    "cat_frameworks": "Frameworks y Librerías",
+    "cat_tools": "Herramientas y DevOps",
+    "level_advanced": "Avanzado",
+    "level_intermediate": "Intermedio",
+    "level_basic": "Básico"
   },
   "projects": {
-    "title": "Proyectos",
-    "subtitle": "Projects",
+    "title": "Mis Proyectos",
+    "subtitle": "Portfolio",
     "github": "Ver en GitHub",
     "jfocus_desc": "Aplicación de escritorio para administración de tareas desarrollada con JavaFX.",
     "nanosip_desc": "Sistema de gestión empresarial con control de acceso por permisos. Maneja empleados, clientes, ventas, inventario y proveedores. API REST con Spring Boot y base de datos desplegada en Azure.",
@@ -33,8 +43,10 @@
     "atmos_desc": "Aplicación móvil Android que consume una API del clima para mostrar el estado del tiempo en tiempo real."
   },
   "contact": {
-    "title": "Contacto",
-    "subtitle": "Contact",
-    "description": "¿Tienes un proyecto en mente o quieres trabajar juntos? Escríbeme."
+    "title": "¿Trabajamos Juntos?",
+    "subtitle": "Contacto",
+    "description": "Siempre abierto a nuevas oportunidades y colaboraciones emocionantes. ¡No dudes en contactarme!",
+    "location": "Torreón, México — Remoto",
+    "find_me": "Encuéntrame en"
   }
 }

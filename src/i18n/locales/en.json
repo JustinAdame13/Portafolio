@@ -8,24 +8,34 @@
   "hero": {
     "greeting": "Hi, my name is",
     "role": "Software Developer",
+    "badge": "Focused on Desktop & Mobile Solutions",
     "bio1": "Specialized in Java, Spring Boot and Android.",
-    "bio2": "Passionate about learning",
-    "cta_projects": "View projects",
+    "bio2": "Passionate about learning and building real solutions.",
+    "cta_projects": "View Projects",
     "cta_contact": "Contact"
   },
   "about": {
-    "title": "About Me",
-    "subtitle": "Sobre mí",
+    "title": "Passion for Technology",
+    "subtitle": "About Me",
     "p1": "I am a software developer with experience building desktop applications, REST APIs and Android mobile apps.",
-    "p2": "I have worked with teams on real projects, from database design to cloud deployment with Azure. I am passionate about writing clean code and building solutions that solve real problems."
+    "p2": "I have worked with teams on real projects, from database design to cloud deployment with Azure. I am passionate about writing clean code and building solutions that solve real problems.",
+    "years": "Years of Exp.",
+    "projects": "Projects"
   },
   "skills": {
-    "title": "Skills",
-    "subtitle": "Habilidades"
+    "title": "Technical Mastery",
+    "subtitle": "Tech Stack",
+    "description": "Solid experience building desktop, mobile and web applications from end to end.",
+    "cat_languages": "Languages",
+    "cat_frameworks": "Frameworks & Libraries",
+    "cat_tools": "Tools & DevOps",
+    "level_advanced": "Advanced",
+    "level_intermediate": "Intermediate",
+    "level_basic": "Basic"
   },
   "projects": {
-    "title": "Projects",
-    "subtitle": "Proyectos",
+    "title": "My Projects",
+    "subtitle": "Portfolio",
     "github": "View on GitHub",
     "jfocus_desc": "Desktop task management application built with JavaFX.",
     "nanosip_desc": "Enterprise management system with role-based access control. Handles employees, clients, sales, inventory and suppliers. REST API with Spring Boot and database deployed on Azure.",
@@ -33,8 +43,10 @@
     "atmos_desc": "Android mobile app that consumes a weather API to display real-time weather conditions."
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Contacto",
-    "description": "Have a project in mind or want to work together? Write to me."
+    "title": "Let's Work Together",
+    "subtitle": "Contact",
+    "description": "Always open to new opportunities and exciting collaborations. Feel free to reach out!",
+    "location": "Torreón, México — Remote",
+    "find_me": "Find me on"
   }
 }
