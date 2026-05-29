@@ -21,7 +21,7 @@ const projects = [
     github: "https://github.com/JustinAdame13/NanosipApi"
   },
   {
-    title: "App Clima Android",
+    title: "Atmos",
     descKey: "projects.atmos_desc",
     tags: ["Android", "Java", "REST API"],
     github: "https://github.com/JustinAdame13/Atmos",
