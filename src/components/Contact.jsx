@@ -9,7 +9,7 @@ const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'www.linkedin.com/in/justin-adame-garcia-434724412',
+    href: 'https://www.linkedin.com/in/justin-adame-434724412/',
     color: 'var(--secondary)',
   },
   {
