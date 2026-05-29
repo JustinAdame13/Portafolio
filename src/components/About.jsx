@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
+import foto from "../assets/foto.jpeg"
 
 function About() {
     const { t, i18n } = useTranslation()
@@ -16,15 +17,15 @@ function About() {
 
         <div className="flex flex-col md:flex-row gap-12 items-center">
 
-          <motion.div
-            className="w-48 h-48 rounded-full bg-gray-700 flex items-center justify-center flex-shrink-0"
+          <motion.img
+            src={foto}
+            alt="Mi foto"
+            className="w-48 h-48 rounded-full object-cover flex-shrink-0"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-          >
-            <span className="text-gray-400 text-sm">Tu foto aquí</span>
-          </motion.div>
+            />
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
