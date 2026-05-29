@@ -38,7 +38,7 @@ function Hero() {
           transition={{ duration: 0.5 }}
         >
           <span
-            className="glass-card px-4 py-1 rounded-full font-mono-label uppercase tracking-widest"
+            className="glass-card px-4 py-2 rounded-full font-mono-label uppercase tracking-widest block max-w-xs text-center whitespace-normal"
             style={{ color: 'var(--electric-purple)', borderColor: 'rgba(192, 132, 252, 0.2)' }}
           >
             {t('hero.badge')}

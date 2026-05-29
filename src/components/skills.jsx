@@ -51,7 +51,7 @@ function Skills() {
       <div className="max-w-6xl mx-auto">
 
         {/* Encabezado */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
           <div className="space-y-3">
             <span
               className="font-mono-label uppercase tracking-widest"
