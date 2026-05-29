@@ -37,7 +37,7 @@ function Footer() {
         <div className="flex gap-8">
           {[
             { href: 'https://github.com/JustinAdame13', label: 'GitHub' },
-            { href: 'https://www.linkedin.com/in/justin-adame', label: 'LinkedIn' },
+            { href: 'https://www.linkedin.com/in/justin-adame-434724412/', label: 'LinkedIn' },
             { href: 'https://profile.indeed.com/justin-adame', label: 'Indeed' },
           ].map(link => (
             <a
