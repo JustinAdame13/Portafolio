@@ -111,7 +111,7 @@ function About() {
                     letterSpacing: '-0.04em'
                   }}
                 >
-                  2+
+                  1+
                 </div>
                 <div
                   className="font-mono-label uppercase mt-1"
