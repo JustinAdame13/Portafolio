@@ -8,8 +8,8 @@
   "hero": {
     "greeting": "Hola, mi nombre es",
     "role": "Desarrollador de Software",
-    "badge": "Enfocado en Soluciones Desktop y Móvil",
-    "bio1": "Especializado en Java, Spring Boot y Android.",
+    "badge": "Enfocado en Soluciones Backend",
+    "bio1": "Especializado en Java Spring Boot.",
     "bio2": "Apasionado por el aprendizaje y construir soluciones reales.",
     "cta_projects": "Ver Proyectos",
     "cta_contact": "Contacto"
@@ -18,7 +18,7 @@
     "title": "Pasión por la Tecnología",
     "subtitle": "Sobre Mí",
     "p1": "Soy un desarrollador de software con experiencia en el desarrollo de aplicaciones de escritorio, APIs REST y aplicaciones móviles Android.",
-    "p2": "He trabajado con equipos en proyectos reales, desde el diseño de bases de datos hasta el despliegue en la nube con Azure. Me apasiona escribir código limpio y construir soluciones que resuelvan problemas reales.",
+    "p2": "He trabajado con equipos en proyectos reales, desde el diseño de bases de datos hasta el despliegue en la nube con Flyway. Me apasiona escribir código limpio y construir soluciones que resuelvan problemas reales.",
     "years": "Años de Exp.",
     "projects": "Proyectos"
   },

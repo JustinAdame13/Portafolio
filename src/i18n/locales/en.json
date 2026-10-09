@@ -8,8 +8,8 @@
   "hero": {
     "greeting": "Hi, my name is",
     "role": "Software Developer",
-    "badge": "Focused on Desktop & Mobile Solutions",
-    "bio1": "Specialized in Java, Spring Boot and Android.",
+    "badge": "Focused on Backend Solutions",
+    "bio1": "Specialized in Java Spring Boot .",
     "bio2": "Passionate about learning and building real solutions.",
     "cta_projects": "View Projects",
     "cta_contact": "Contact"
@@ -17,8 +17,8 @@
   "about": {
     "title": "Passion for Technology",
     "subtitle": "About Me",
-    "p1": "I am a software developer with experience building desktop applications, REST APIs and Android mobile apps.",
-    "p2": "I have worked with teams on real projects, from database design to cloud deployment with Azure. I am passionate about writing clean code and building solutions that solve real problems.",
+    "p1": "I am a software developer with experience building REST APIs.",
+    "p2": "I have worked with teams on real projects, from database design to cloud deployment with Flyway. I am passionate about writing clean code and building solutions that solve real problems.",
     "years": "Years of Exp.",
     "projects": "Projects"
   },
