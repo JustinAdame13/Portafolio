@@ -3,38 +3,63 @@ import { useTranslation } from "react-i18next"
 
 const skillCategories = [
   {
-    titleKey: 'skills.cat_languages',
+    titleKey: 'skills.cat_backend',
     icon: '< >',
     color: 'var(--electric-purple)',
     barColor: 'linear-gradient(90deg, #C084FC, #4edea3)',
     skills: [
       { name: 'Java', level: 80, labelKey: 'skills.level_advanced' },
-      { name: 'SQL', level: 60, labelKey: 'skills.level_intermediate' },
-      { name: 'JavaScript', level: 35, labelKey: 'skills.level_basic' },
+      { name: 'Spring Boot', level: 65, labelKey: 'skills.level_intermediate' },
+      { name: 'Spring Security', level: 40, labelKey: 'skills.level_basic' },
+      { name: 'REST API', level: 60, labelKey: 'skills.level_intermediate' },
     ]
   },
   {
-    titleKey: 'skills.cat_frameworks',
+    titleKey: 'skills.cat_database',
     icon: '{ }',
     color: 'var(--secondary)',
     barColor: '#4edea3',
     skills: [
-      { name: 'JavaFX / Swing', level: 80, labelKey: 'skills.level_advanced' },
-      { name: 'Spring Boot', level: 40, labelKey: 'skills.level_intermediate' },
-      { name: 'Android SDK', level: 40, labelKey: 'skills.level_intermediate' },
-      { name: 'React', level: 35, labelKey: 'skills.level_basic' },
+      { name: 'PostgreSQL', level: 50, labelKey: 'skills.level_intermediate' },
+      { name: 'SQL', level: 70, labelKey: 'skills.level_intermediate' },
+      { name: 'Flyway', level: 35, labelKey: 'skills.level_basic' },
+      { name: 'JPA / Hibernate', level: 50, labelKey: 'skills.level_intermediate' },
     ]
   },
   {
-    titleKey: 'skills.cat_tools',
+    titleKey: 'skills.cat_devops',
     icon: '⚙',
     color: 'var(--tertiary)',
     barColor: '#fabc4e',
     skills: [
-      { name: 'Git / GitHub', level: 70, labelKey: 'skills.level_intermediate' },
-      { name: 'Maven / Gradle', level: 50, labelKey: 'skills.level_intermediate' },
-      { name: 'Azure', level: 35, labelKey: 'skills.level_basic' },
-      { name: 'Vite / Tailwind', level: 35, labelKey: 'skills.level_basic' },
+      { name: 'Docker', level: 40, labelKey: 'skills.level_basic' },
+      { name: 'Git / GitHub', level: 50, labelKey: 'skills.level_intermediate' },
+      { name: 'GitHub Actions', level: 45, labelKey: 'skills.level_basic' },
+      { name: 'Render / Vercel', level: 30, labelKey: 'skills.level_basic' },
+    ]
+  },
+  {
+    titleKey: 'skills.cat_frontend',
+    icon: '</>',
+    color: 'var(--electric-purple)',
+    barColor: 'linear-gradient(90deg, #4edea3, #C084FC)',
+    skills: [
+      { name: 'React 19', level: 45, labelKey: 'skills.level_intermediate' },
+      { name: 'Tailwind CSS', level: 45, labelKey: 'skills.level_intermediate' },
+      { name: 'Vite', level: 45, labelKey: 'skills.level_intermediate' },
+      { name: 'JavaFX / Swing', level: 80, labelKey: 'skills.level_advanced' },
+    ]
+  },
+  {
+    titleKey: 'skills.cat_other',
+    icon: '🔗',
+    color: 'var(--secondary)',
+    barColor: '#fabc4e',
+    skills: [
+      { name: 'WhatsApp API', level: 60, labelKey: 'skills.level_intermediate' },
+      { name: 'Android SDK', level: 40, labelKey: 'skills.level_intermediate' },
+      { name: 'Maven', level: 65, labelKey: 'skills.level_intermediate' },
+      { name: 'IntelliJ / VS Code', level: 75, labelKey: 'skills.level_advanced' },
     ]
   }
 ]
@@ -79,8 +104,8 @@ function Skills() {
           </p>
         </div>
 
-        {/* Grid de 3 tarjetas */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Grid de tarjetas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.titleKey}

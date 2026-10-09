@@ -129,7 +129,7 @@ function About() {
                     color: 'var(--electric-purple)',
                     letterSpacing: '-0.04em'
                   }}
-                >
+                > 
                   4+
                 </div>
                 <div
