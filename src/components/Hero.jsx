@@ -22,7 +22,6 @@ function Hero() {
   return (
     <section
       className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden"
-      style={{ background: 'var(--surface)' }}
     >
       {/* Luz que sigue al cursor */}
       <div id="hero-glow" className="hero-glow" />
@@ -85,43 +84,21 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          {/* Botón primario */}
-          
-            <a href="#projects"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
-            style={{
-              background: 'var(--primary-container)',
-              color: 'var(--on-primary-container)',
-              fontSize: '16px'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-2px)'
-              e.currentTarget.style.boxShadow = '0 0 24px rgba(192, 132, 252, 0.4)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = 'none'
-            }}
+          {/* Botón primario — cristal teñido */}
+          <a
+            href="#projects"
+            className="liquid-btn liquid-btn--primary w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold"
+            style={{ fontSize: '16px' }}
           >
             {t('hero.cta_projects')}
             <span style={{ fontSize: '18px' }}>→</span>
           </a>
 
-          {/* Botón secundario */}
-          
-            <a href="#contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300"
-            style={{
-              border: '1px solid rgba(192, 132, 252, 0.4)',
-              color: 'var(--electric-purple)',
-              fontSize: '16px'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = 'rgba(192, 132, 252, 0.1)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent'
-            }}
+          {/* Botón secundario — cristal claro */}
+          <a
+            href="#contact"
+            className="liquid-btn w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold"
+            style={{ fontSize: '16px' }}
           >
             {t('hero.cta_contact')}
           </a>

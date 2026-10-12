@@ -16,7 +16,7 @@ const projects = [
     descKey: "projects.retail_frontend_desc",
     eventKey: "projects.hackathon_badge",
     tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PWA", "Vercel"],
-    github: "https://github.com/JustinAdame13/Front_End_Softtek",
+    github: "https://github.com/ToxiCreep/Front_End_Softtek",
     accentColor: 'var(--tertiary)',
     tagTextColor: 'var(--tertiary)',
   },
@@ -77,7 +77,6 @@ function Projects() {
     <section
       id="projects"
       className="py-24 px-6"
-      style={{ background: 'var(--surface-container-low)' }}
     >
       <div className="max-w-6xl mx-auto">
 

@@ -7,23 +7,34 @@
 }
 
 :root {
-  --surface: #0b1326;
-  --surface-container: #171f33;
-  --surface-container-low: #131b2e;
-  --surface-container-high: #222a3d;
-  --surface-container-highest: #2d3449;
-  --surface-deep: #020617;
-  --on-surface: #dae2fd;
-  --on-surface-variant: #cfc2d6;
+  /* Fondo un poco más profundo para que la aurora y el cristal resalten */
+  --surface: #060a17;
+  --surface-container: #121a2e;
+  --surface-container-low: #0d1426;
+  --surface-container-high: #1c2440;
+  --surface-container-highest: rgba(255, 255, 255, 0.07);
+  --surface-deep: #03050d;
+  --on-surface: #e6ebff;
+  --on-surface-variant: #c9c2db;
   --outline: #988d9f;
   --outline-variant: #4d4354;
-  --primary: #ddb7ff;
+  --primary: #e2c4ff;
   --primary-container: #b76dff;
-  --on-primary-container: #400071;
+  --on-primary-container: #ffffff;
   --secondary: #4edea3;
   --tertiary: #fabc4e;
   --electric-purple: #C084FC;
   --emerald-glow: #34D399;
+
+  /* ── Tokens del material "liquid glass" ── */
+  --glass-fill: rgba(255, 255, 255, 0.045);
+  --glass-fill-hover: rgba(255, 255, 255, 0.075);
+  --glass-blur: 22px;
+  --glass-saturate: 180%;
+  --glass-edge: rgba(255, 255, 255, 0.16);       /* borde iluminado */
+  --glass-edge-dim: rgba(255, 255, 255, 0.04);   /* borde en sombra */
+  --glass-highlight: rgba(255, 255, 255, 0.22);  /* reflejo superior */
+  --glass-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.55);
 }
 
 html {
@@ -36,43 +47,265 @@ body {
   font-family: 'Geist', sans-serif;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Efecto de cristal para la navbar */
+::selection {
+  background: rgba(192, 132, 252, 0.35);
+  color: #fff;
+}
+
+/* ═════════════════════════════════════════════
+   1. FONDO AURORA
+   Capa fija detrás de toda la página. Son manchas
+   de color muy desenfocadas que se mueven lento.
+   El cristal "refracta" estos colores al desenfocarlos.
+   ═════════════════════════════════════════════ */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(120, 80, 220, 0.18), transparent 60%),
+    var(--surface);
+}
+
+.aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.aurora__blob--1 {
+  width: 55vw; height: 55vw;
+  top: -15vw; left: -10vw;
+  background: radial-gradient(circle, #8b3dff 0%, transparent 70%);
+  animation: aurora-1 26s ease-in-out infinite alternate;
+}
+.aurora__blob--2 {
+  width: 45vw; height: 45vw;
+  top: 30vh; right: -12vw;
+  background: radial-gradient(circle, #1fbf86 0%, transparent 70%);
+  opacity: 0.4;
+  animation: aurora-2 32s ease-in-out infinite alternate;
+}
+.aurora__blob--3 {
+  width: 40vw; height: 40vw;
+  bottom: -15vw; left: 20vw;
+  background: radial-gradient(circle, #3b5bff 0%, transparent 70%);
+  opacity: 0.45;
+  animation: aurora-3 38s ease-in-out infinite alternate;
+}
+.aurora__blob--4 {
+  width: 28vw; height: 28vw;
+  top: 55vh; left: -8vw;
+  background: radial-gradient(circle, #f0a43a 0%, transparent 70%);
+  opacity: 0.22;
+  animation: aurora-2 44s ease-in-out infinite alternate-reverse;
+}
+
+/* Grano fino encima: evita el "banding" de los gradientes y da textura premium */
+.aurora__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@keyframes aurora-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(18vw, 12vh) scale(1.15); }
+}
+@keyframes aurora-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-14vw, -10vh) scale(1.2); }
+}
+@keyframes aurora-3 {
+  0%   { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(12vw, -18vh) scale(0.9); }
+}
+
+/* Todo el contenido va encima de la aurora */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═════════════════════════════════════════════
+   2. MATERIAL LIQUID GLASS
+   Capas (de abajo hacia arriba):
+   - backdrop-filter: desenfoca y satura lo que hay detrás
+   - fondo blanco casi transparente
+   - box-shadow inset: reflejo de luz arriba, sombra abajo
+   - ::before: borde con gradiente (brilla arriba, se apaga abajo)
+   - ::after: brillo que sigue al mouse (--mx / --my)
+   ═════════════════════════════════════════════ */
+.glass-card,
 .glass-panel {
-  background: rgba(19, 27, 46, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(192, 132, 252, 0.15);
+  position: relative;
+  isolation: isolate;
+  background: var(--glass-fill);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1px 0 0 var(--glass-highlight),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.03),
+    inset 0 0 20px 0 rgba(255, 255, 255, 0.02),
+    var(--glass-shadow);
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Tarjetas con efecto de cristal */
-.glass-card {
-  background: rgba(23, 31, 51, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(77, 67, 84, 0.35);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+/* Borde con gradiente: truco de mask para pintar solo el "anillo" */
+.glass-card::before,
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    160deg,
+    var(--glass-edge) 0%,
+    var(--glass-edge-dim) 40%,
+    rgba(192, 132, 252, 0.10) 70%,
+    var(--glass-edge) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Brillo especular que sigue al cursor (las variables las mueve App.jsx) */
+.glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, -20%),
+    rgba(255, 255, 255, 0.09),
+    rgba(192, 132, 252, 0.05) 35%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .glass-card:hover {
-  border-color: var(--electric-purple);
-  background: rgba(23, 31, 51, 0.85);
-  box-shadow: 0 0 24px rgba(192, 132, 252, 0.12);
+  background: var(--glass-fill-hover);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 24px 0 rgba(255, 255, 255, 0.03),
+    0 20px 50px -12px rgba(0, 0, 0, 0.6),
+    0 0 40px -8px rgba(192, 132, 252, 0.25);
 }
+.glass-card:hover::after {
+  opacity: 1;
+}
+
+/* Navbar: un poco más opaca para que el texto siempre se lea */
+.glass-panel {
+  --glass-blur: 28px;
+  background: rgba(10, 14, 30, 0.45);
+}
+
+/* Navegadores sin backdrop-filter: cristal "esmerilado" sólido */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card, .glass-panel { background: rgba(18, 24, 44, 0.92); }
+}
+
+/* ═════════════════════════════════════════════
+   3. BOTONES DE CRISTAL
+   ═════════════════════════════════════════════ */
+.liquid-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--on-surface);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 6px 20px -6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Barrido de luz al pasar el mouse */
+.liquid-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+.liquid-btn:hover::after { left: 140%; }
+
+.liquid-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 12px 30px -8px rgba(0, 0, 0, 0.55),
+    0 0 24px -4px rgba(192, 132, 252, 0.35);
+}
+.liquid-btn:active { transform: translateY(0) scale(0.98); }
+
+/* Variante principal: cristal teñido de morado */
+.liquid-btn--primary {
+  background: linear-gradient(135deg, rgba(183, 109, 255, 0.75), rgba(124, 58, 237, 0.65));
+  border-color: rgba(230, 200, 255, 0.45);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -8px 16px rgba(60, 0, 120, 0.25),
+    0 10px 30px -8px rgba(160, 80, 255, 0.6);
+}
+.liquid-btn--primary:hover {
+  background: linear-gradient(135deg, rgba(196, 130, 255, 0.85), rgba(139, 77, 247, 0.75));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -8px 16px rgba(60, 0, 120, 0.25),
+    0 14px 40px -8px rgba(170, 90, 255, 0.75);
+}
+
+/* ═════════════════════════════════════════════
+   4. UTILIDADES EXISTENTES
+   ═════════════════════════════════════════════ */
 
 /* Texto con gradiente púrpura → verde */
 .text-gradient {
-  background: linear-gradient(to right, #ddb7ff, #4edea3);
+  background: linear-gradient(100deg, #e2c4ff 0%, #c084fc 35%, #4edea3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 24px rgba(192, 132, 252, 0.35));
 }
 
-/* Barra de habilidades - fondo */
+/* Barra de habilidades - fondo (canal de cristal) */
 .skill-bar-bg {
-  background: rgba(77, 67, 84, 0.4);
-  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  height: 5px;
   width: 100%;
   border-radius: 9999px;
   overflow: hidden;
@@ -98,9 +331,21 @@ body {
   position: fixed;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.08) 0%, rgba(11, 19, 38, 0) 70%);
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, rgba(11, 19, 38, 0) 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: left 0.1s ease, top 0.1s ease;
   z-index: 0;
+}
+
+/* Accesibilidad: si el usuario pidió menos movimiento, la aurora se queda quieta */
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* En móvil: menos blur = mejor rendimiento */
+@media (max-width: 768px) {
+  :root { --glass-blur: 16px; }
+  .aurora__blob { filter: blur(70px); }
 }

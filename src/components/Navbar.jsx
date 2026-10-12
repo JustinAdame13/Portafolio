@@ -23,10 +23,12 @@ function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass-panel">
+    // La nav ocupa todo el ancho pero es transparente; la "píldora" de cristal está adentro
+    <nav className="fixed top-0 w-full z-50 px-4 pt-4">
+      <div className="glass-panel rounded-2xl max-w-6xl mx-auto">
 
       {/* ── Barra principal ── */}
-      <div className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+      <div className="flex justify-between items-center px-6 py-3">
 
         {/* Logo */}
         <span
@@ -54,15 +56,8 @@ function Navbar() {
           {/* Botón Resume */}
           <a
             href="#"
-            className="px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all duration-300"
-            style={{
-              background: 'var(--primary-container)',
-              color: 'var(--on-primary-container)',
-              fontFamily: 'JetBrains Mono, monospace',
-              boxShadow: '0 0 15px rgba(192, 132, 252, 0.3)'
-            }}
-            onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.15)'}
-            onMouseLeave={e => e.currentTarget.style.filter = 'brightness(1)'}
+            className="liquid-btn liquid-btn--primary px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest"
+            style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             Resume
           </a>
@@ -144,10 +139,7 @@ function Navbar() {
       {isMenuOpen && (
         <div
           className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{
-            borderTop: '1px solid rgba(192, 132, 252, 0.15)',
-            background: 'rgba(19, 27, 46, 0.97)'
-          }}
+          style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}
         >
           {navLinks.map(link => (
             <a
@@ -169,18 +161,15 @@ function Navbar() {
           <a
             href="#"
             onClick={closeMenu}
-            className="mt-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-center transition-all duration-300"
-            style={{
-              background: 'var(--primary-container)',
-              color: 'var(--on-primary-container)',
-              fontFamily: 'JetBrains Mono, monospace',
-            }}
+            className="liquid-btn liquid-btn--primary mt-2 py-3 rounded-xl text-xs font-bold uppercase tracking-widest text-center"
+            style={{ fontFamily: 'JetBrains Mono, monospace' }}
           >
             Resume
           </a>
         </div>
       )}
 
+      </div>
     </nav>
   )
 }

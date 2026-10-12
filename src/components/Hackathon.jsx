@@ -14,7 +14,7 @@ const events = [
     contributions: ["hackathon.c1", "hackathon.c2", "hackathon.c3"],
     repos: [
       { labelKey: "hackathon.repo_backend",  url: "https://github.com/JustinAdame13/Reto-Softteck" },
-      { labelKey: "hackathon.repo_frontend", url: "https://github.com/JustinAdame13/Front_End_Softtek" },
+      { labelKey: "hackathon.repo_frontend", url: "https://github.com/ToxiCreep/Front_End_Softtek" },
     ],
     stack: ["Java 21", "Spring Boot", "PostgreSQL", "React", "TypeScript", "Node.js", "Docker", "LLMs"],
   },
@@ -27,7 +27,6 @@ function Hackathon() {
     <section
       id="hackathon"
       className="py-24 px-6"
-      style={{ background: 'var(--surface-container)' }}
     >
       <div className="max-w-6xl mx-auto">
 

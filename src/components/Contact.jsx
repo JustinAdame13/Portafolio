@@ -26,7 +26,6 @@ function Contact() {
     <section
       id="contact"
       className="py-24 px-6"
-      style={{ background: 'var(--surface)' }}
     >
       <div className="max-w-6xl mx-auto">
 

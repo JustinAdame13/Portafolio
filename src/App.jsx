@@ -6,6 +6,37 @@ import Hackathon from './components/Hackathon'
 import Contact from './components/Contact'
 import Navbar from './components/Navbar'
 import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+
+// Fondo animado detrás de toda la página (solo decoración, aria-hidden)
+function Aurora() {
+  return (
+    <div className="aurora" aria-hidden="true">
+      <div className="aurora__blob aurora__blob--1" />
+      <div className="aurora__blob aurora__blob--2" />
+      <div className="aurora__blob aurora__blob--3" />
+      <div className="aurora__blob aurora__blob--4" />
+      <div className="aurora__grain" />
+    </div>
+  )
+}
+
+// Un solo listener para toda la página: cuando el mouse se mueve sobre
+// cualquier .glass-card, le pasamos la posición del cursor como variables CSS
+// (--mx, --my) y el CSS dibuja el brillo en ese punto.
+function useGlassSpotlight() {
+  useEffect(() => {
+    const handleMove = (e) => {
+      const card = e.target.closest?.('.glass-card')
+      if (!card) return
+      const rect = card.getBoundingClientRect()
+      card.style.setProperty('--mx', `${e.clientX - rect.left}px`)
+      card.style.setProperty('--my', `${e.clientY - rect.top}px`)
+    }
+    window.addEventListener('pointermove', handleMove, { passive: true })
+    return () => window.removeEventListener('pointermove', handleMove)
+  }, [])
+}
 
 function Footer() {
   const { t } = useTranslation()
@@ -14,8 +45,10 @@ function Footer() {
     <footer
       className="w-full"
       style={{
-        borderTop: '1px solid rgba(77, 67, 84, 0.3)',
-        background: 'var(--surface-deep)'
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        background: 'rgba(3, 5, 13, 0.55)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)'
       }}
     >
       <div
@@ -61,7 +94,7 @@ function Footer() {
           className="font-mono-label uppercase"
           style={{ color: 'var(--on-surface-variant)' }}
         >
-          © 2025 Justin.dev
+          © {new Date().getFullYear()} Justin.dev
         </p>
 
       </div>
@@ -70,8 +103,12 @@ function Footer() {
 }
 
 function App() {
+  useGlassSpotlight()
+
   return (
-    <div style={{ background: 'var(--surface)', minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh' }}>
+      <Aurora />
+      <div className="page-content">
       <Navbar />
       <main>
         <Hero />
@@ -82,6 +119,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      </div>
     </div>
   )
 }

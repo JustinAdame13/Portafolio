@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
-import foto from "../assets/foto.jpeg"
+import foto from "../assets/foto.jpg"
 
 function About() {
   const { t } = useTranslation()
@@ -9,7 +9,6 @@ function About() {
     <section
       id="about"
       className="py-24 px-6"
-      style={{ background: 'var(--surface-container-low)' }}
     >
       <div className="max-w-6xl mx-auto">
 
