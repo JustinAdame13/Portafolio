@@ -3,6 +3,24 @@ import { useTranslation } from "react-i18next"
 
 const projects = [
   {
+    title: "Tienda Inteligente · API",
+    descKey: "projects.retail_backend_desc",
+    eventKey: "projects.hackathon_badge",
+    tags: ["Java 21", "Spring Boot", "PostgreSQL", "Flyway", "Docker", "LLMs"],
+    github: "https://github.com/JustinAdame13/Reto-Softteck",
+    accentColor: 'var(--tertiary)',
+    tagTextColor: 'var(--tertiary)',
+  },
+  {
+    title: "Tienda Inteligente · Mi Sucursal",
+    descKey: "projects.retail_frontend_desc",
+    eventKey: "projects.hackathon_badge",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PWA", "Vercel"],
+    github: "https://github.com/JustinAdame13/Front_End_Softtek",
+    accentColor: 'var(--tertiary)',
+    tagTextColor: 'var(--tertiary)',
+  },
+  {
     title: "BeautyAgenda",
     descKey: "projects.beautyagenda_desc",
     tags: ["Java 21", "Spring Boot", "PostgreSQL", "Spring Security", "Docker", "React"],
@@ -95,6 +113,21 @@ function Projects() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
+              {/* Badge de evento — solo aparece si el proyecto tiene eventKey */}
+              {project.eventKey && (
+                <a
+                  href="#hackathon"
+                  className="self-start px-3 py-1 rounded-full font-mono-label uppercase"
+                  style={{
+                    border: '1px solid var(--tertiary)',
+                    color: 'var(--tertiary)',
+                    fontSize: '10px'
+                  }}
+                >
+                  🏆 {t(project.eventKey)}
+                </a>
+              )}
+
               {/* Título */}
               <h3
                 className="font-semibold text-xl"

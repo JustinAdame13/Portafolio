@@ -3,7 +3,8 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "hackathon": "Events"
   },
   "hero": {
     "greeting": "Hi, my name is",
@@ -44,7 +45,10 @@
     "jfocus_desc": "Desktop task management application built with JavaFX.",
     "nanosip_desc": "Enterprise management system with role-based access control. Handles employees, clients, sales, inventory and suppliers. REST API with Spring Boot and database deployed on Azure.",
     "nanosip_api_desc": "REST API built with Spring Boot for the Nanosip project.",
-    "atmos_desc": "Android mobile app that consumes a weather API to display real-time weather conditions."
+    "atmos_desc": "Android mobile app that consumes a weather API to display real-time weather conditions.",
+    "hackathon_badge": "Road to Tech Hackathon 2026",
+    "retail_backend_desc": "REST API that turns each store's sales, inventory and staff data into actionable recommendations: a custom demand forecasting engine (Ayax), profit-maximizing promotions, smart inventory and staff allocation. Multi-store with 3 PostgreSQL databases and optional AI (Anthropic, OpenAI, Gemini) with automatic fallback. My main contribution.",
+    "retail_frontend_desc": "\"Mi sucursal\" PWA that consumes the API: dashboards for sales, inventory, promotions, demand and staff, plus Softy, an assistant that generates interfaces from text or voice using an LLM. Built by the team; I handled its integration with the backend and deployment."
   },
   "contact": {
     "title": "Let's Work Together",
@@ -52,5 +56,23 @@
     "description": "Always open to new opportunities and exciting collaborations. Feel free to reach out!",
     "location": "Torreón, México — Remote",
     "find_me": "Find me on"
+  },
+  "hackathon": {
+    "subtitle": "Experience",
+    "title": "Hackathons & Events",
+    "event": "Road to Tech Hackathon 2026",
+    "challenge": "Softtek Challenge · Smart Retail Store",
+    "date": "October 2026 · Team of 5",
+    "role_pm": "Project Manager",
+    "role_backend": "Backend Developer",
+    "role_devops": "Integration & Deploy",
+    "description": "We built a platform that helps retail stores earn more and lose less: it recommends promotions, keeps inventory under control and suggests how many staff to schedule per shift, all based on real sales data.",
+    "contrib_title": "My role",
+    "c1": "Organized and led the team: task assignment, priorities and follow-up throughout the event.",
+    "c2": "Designed and built the Spring Boot REST API and the demand forecasting engine.",
+    "c3": "Integrated the frontend with the backend and deployed everything to the cloud (Render, Neon and Vercel).",
+    "repo_backend": "Backend",
+    "repo_frontend": "Frontend",
+    "see_projects": "See projects"
   }
 }

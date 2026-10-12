@@ -2,6 +2,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/skills'
 import Projects from './components/Projects'
+import Hackathon from './components/Hackathon'
 import Contact from './components/Contact'
 import Navbar from './components/Navbar'
 import { useTranslation } from 'react-i18next'
@@ -77,6 +78,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Hackathon />
         <Contact />
       </main>
       <Footer />

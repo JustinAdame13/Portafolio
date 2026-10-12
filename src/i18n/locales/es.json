@@ -3,7 +3,8 @@
     "about": "Sobre mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "hackathon": "Eventos"
   },
   "hero": {
     "greeting": "Hola, mi nombre es",
@@ -44,7 +45,10 @@
     "jfocus_desc": "Aplicación de escritorio para administración de tareas desarrollada con JavaFX.",
     "nanosip_desc": "Sistema de gestión empresarial con control de acceso por permisos. Maneja empleados, clientes, ventas, inventario y proveedores. API REST con Spring Boot y base de datos desplegada en Azure.",
     "nanosip_api_desc": "API REST con Spring Boot para el proyecto de Nanosip.",
-    "atmos_desc": "Aplicación móvil Android que consume una API del clima para mostrar el estado del tiempo en tiempo real."
+    "atmos_desc": "Aplicación móvil Android que consume una API del clima para mostrar el estado del tiempo en tiempo real.",
+    "hackathon_badge": "Hackathon Road to Tech 2026",
+    "retail_backend_desc": "API REST que convierte ventas, inventario y personal de cada sucursal en recomendaciones accionables: motor propio de pronóstico de demanda (Ayax), promociones que maximizan la ganancia, inventario inteligente y asignación de personal. Multi-sucursal con 3 bases PostgreSQL e IA opcional (Anthropic, OpenAI, Gemini) con respaldo automático. Mi aportación principal.",
+    "retail_frontend_desc": "PWA \"Mi sucursal\" que consume la API: dashboards de ventas, inventario, promociones, demanda y personal, más Softy, un asistente que genera interfaces a partir de texto o voz con un LLM. Desarrollado por el equipo; yo me encargué de integrarlo con el backend y desplegarlo."
   },
   "contact": {
     "title": "¿Trabajamos Juntos?",
@@ -52,5 +56,23 @@
     "description": "Siempre abierto a nuevas oportunidades y colaboraciones emocionantes. ¡No dudes en contactarme!",
     "location": "Torreón, México — Remoto",
     "find_me": "Encuéntrame en"
+  },
+  "hackathon": {
+    "subtitle": "Experiencia",
+    "title": "Hackathons y Eventos",
+    "event": "Hackathon Road to Tech 2026",
+    "challenge": "Reto Softtek · Tienda Inteligente para Retail",
+    "date": "Octubre 2026 · Equipo de 5",
+    "role_pm": "Project Manager",
+    "role_backend": "Backend Developer",
+    "role_devops": "Integración y Deploy",
+    "description": "Desarrollamos una plataforma que ayuda a las sucursales de retail a ganar más y perder menos: recomienda promociones, controla el inventario y sugiere cuánto personal poner por turno, todo a partir de datos de ventas reales.",
+    "contrib_title": "Mi participación",
+    "c1": "Organicé y dirigí al equipo: repartición de tareas, prioridades y seguimiento durante el evento.",
+    "c2": "Diseñé y desarrollé la API REST con Spring Boot y el motor de pronóstico de demanda.",
+    "c3": "Integré el frontend con el backend y desplegué todo en la nube (Render, Neon y Vercel).",
+    "repo_backend": "Backend",
+    "repo_frontend": "Frontend",
+    "see_projects": "Ver proyectos"
   }
 }

@@ -16,6 +16,7 @@ function Navbar() {
 
   const navLinks = [
     { href: '#projects', label: t('nav.projects') },
+    { href: '#hackathon', label: t('nav.hackathon') },
     { href: '#skills',   label: t('nav.skills')   },
     { href: '#about',    label: t('nav.about')    },
     { href: '#contact',  label: t('nav.contact')  },
